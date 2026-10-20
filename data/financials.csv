@@ -1,0 +1,49 @@
+company_number,company_name,role,fy,period_end,metric,value,unit,source_file,source_page,source_url,notes
+10975623,Zellis Holdings Limited,target,FY2021,2021-04-30,revenue_gbp,159703,GBP_k,10975623_FY2021.pdf,36,CH (manifest.csv row),group consolidated income statement
+10975623,Zellis Holdings Limited,target,FY2021,2021-04-30,staff_costs_gbp,92776,GBP_k,10975623_FY2022.pdf,83,CH (manifest.csv row),comparative in FY2022 filing (wages 79068 + socsec 7771 + pension 5937)
+10975623,Zellis Holdings Limited,target,FY2021,2021-04-30,avg_headcount,2221,count,10975623_FY2022.pdf,83,CH (manifest.csv row),comparative in FY2022 filing
+10975623,Zellis Holdings Limited,target,FY2022,2022-04-30,revenue_gbp,175350,GBP_k,10975623_FY2022.pdf,54,CH (manifest.csv row),group consolidated income statement
+10975623,Zellis Holdings Limited,target,FY2022,2022-04-30,staff_costs_gbp,94108,GBP_k,10975623_FY2023.pdf,94,CH (manifest.csv row),comparative in FY2023 filing (82165+8584+3359)
+10975623,Zellis Holdings Limited,target,FY2022,2022-04-30,avg_headcount,2129,count,10975623_FY2022.pdf,83,CH (manifest.csv row),FY2023 filing restates comparative to 2300 - noted
+10975623,Zellis Holdings Limited,target,FY2023,2023-04-30,revenue_gbp,201351,GBP_k,10975623_FY2023.pdf,63,CH (manifest.csv row),FY2022 comparative restated (note 3)
+10975623,Zellis Holdings Limited,target,FY2023,2023-04-30,staff_costs_gbp,107459,GBP_k,10975623_FY2023.pdf,94,CH (manifest.csv row),91964+10166+5329
+10975623,Zellis Holdings Limited,target,FY2023,2023-04-30,avg_headcount,2160,count,10975623_FY2023.pdf,94,CH (manifest.csv row),
+10975623,Zellis Holdings Limited,target,FY2024,2024-04-30,revenue_gbp,226584,GBP_k,10975623_FY2024.pdf,69,CH (manifest.csv row),group consolidated income statement
+10975623,Zellis Holdings Limited,target,FY2024,2024-04-30,staff_costs_gbp,122418,GBP_k,10975623_FY2025.pdf,88,CH (manifest.csv row),comparative in FY2025 filing (105991+11034+5393)
+10975623,Zellis Holdings Limited,target,FY2024,2024-04-30,avg_headcount,2477,count,10975623_FY2025.pdf,88,CH (manifest.csv row),comparative in FY2025 filing
+10975623,Zellis Holdings Limited,target,FY2025,2025-04-30,revenue_gbp,261068,GBP_k,10975623_FY2025.pdf,65,CH (manifest.csv row),matches annual report headline GBP 261.1m
+10975623,Zellis Holdings Limited,target,FY2025,2025-04-30,staff_costs_gbp,136488,GBP_k,10975623_FY2025.pdf,88,CH (manifest.csv row),116200+13731+6557
+10975623,Zellis Holdings Limited,target,FY2025,2025-04-30,avg_headcount,2655,count,10975623_FY2025.pdf,88,CH (manifest.csv row),rows partially scrambled by OCR - total row clear
+05965280,OneAdvanced Group Limited,peer,FY2022,2022-02-28,revenue_gbp,316494,GBP_k,05965280_FY2023.pdf,24,CH (manifest.csv row),comparative in FY2023 filing
+05965280,OneAdvanced Group Limited,peer,FY2022,2022-02-28,staff_costs_gbp,132593,GBP_k,05965280_FY2023.pdf,44,CH (manifest.csv row),comparative in FY2023 filing
+05965280,OneAdvanced Group Limited,peer,FY2022,2022-02-28,avg_headcount,2676,count,05965280_FY2023.pdf,44,CH (manifest.csv row),comparative in FY2023 filing
+05965280,OneAdvanced Group Limited,peer,FY2023,2023-02-28,revenue_gbp,321708,GBP_k,05965280_FY2023.pdf,24,CH (manifest.csv row),
+05965280,OneAdvanced Group Limited,peer,FY2023,2023-02-28,staff_costs_gbp,150689,GBP_k,05965280_FY2023.pdf,44,CH (manifest.csv row),131312+13689+5688
+05965280,OneAdvanced Group Limited,peer,FY2023,2023-02-28,avg_headcount,2960,count,05965280_FY2023.pdf,44,CH (manifest.csv row),
+05965280,OneAdvanced Group Limited,peer,FY2024,2024-02-29,revenue_gbp,320148,GBP_k,05965280_FY2025.pdf,29,CH (manifest.csv row),continuing operations (FY2024 restated; total incl discontinued 342531)
+05965280,OneAdvanced Group Limited,peer,FY2024,2024-02-29,staff_costs_gbp,143607,GBP_k,oneadvanced_midco_fy2025.pdf,60,oneadvanced.com annual report,continuing operations (total incl discontinued 153846)
+05965280,OneAdvanced Group Limited,peer,FY2024,2024-02-29,avg_headcount,2753,count,oneadvanced_midco_fy2025.pdf,60,oneadvanced.com annual report,continuing operations (total incl discontinued 2864)
+05965280,OneAdvanced Group Limited,peer,FY2025,2025-02-28,revenue_gbp,308959,GBP_k,05965280_FY2025.pdf,29,CH (manifest.csv row),continuing operations (total incl discontinued 310497)
+05965280,OneAdvanced Group Limited,peer,FY2025,2025-02-28,staff_costs_gbp,113549,GBP_k,oneadvanced_midco_fy2025.pdf,60,oneadvanced.com annual report,continuing operations (96964+11449+5136)
+05965280,OneAdvanced Group Limited,peer,FY2025,2025-02-28,avg_headcount,2283,count,oneadvanced_midco_fy2025.pdf,60,oneadvanced.com annual report,continuing operations (total incl discontinued 2292)
+02343760,Access UK Ltd,peer,FY2021,2021-06-30,revenue_gbp,317647,GBP_k,02343760_FY2021.pdf,37,CH (manifest.csv row),note 4 turnover analysis (UK 302213 + Europe 6796 + RoW 8638)
+02343760,Access UK Ltd,peer,FY2021,2021-06-30,staff_costs_gbp,127704,GBP_k,02343760_FY2021.pdf,39,CH (manifest.csv row),109851+13133+4720
+02343760,Access UK Ltd,peer,FY2021,2021-06-30,avg_headcount,2255,count,02343760_FY2021.pdf,39,CH (manifest.csv row),
+02343760,Access UK Ltd,peer,FY2022,2022-06-30,revenue_gbp,434381,GBP_k,02343760_FY2023.pdf,46,CH (manifest.csv row),comparative in FY2023 filing
+02343760,Access UK Ltd,peer,FY2022,2022-06-30,staff_costs_gbp,193215,GBP_k,02343760_FY2023.pdf,49,CH (manifest.csv row),169548+17779+5888
+02343760,Access UK Ltd,peer,FY2022,2022-06-30,avg_headcount,3009,count,02343760_FY2022.pdf,44,CH (manifest.csv row),
+02343760,Access UK Ltd,peer,FY2023,2023-06-30,revenue_gbp,581466,GBP_k,02343760_FY2024.pdf,48,CH (manifest.csv row),comparative in FY2024 filing (539842+41624)
+02343760,Access UK Ltd,peer,FY2023,2023-06-30,staff_costs_gbp,236051,GBP_k,02343760_FY2023.pdf,49,CH (manifest.csv row),203464+24808+7779
+02343760,Access UK Ltd,peer,FY2023,2023-06-30,avg_headcount,4428,count,02343760_FY2023.pdf,49,CH (manifest.csv row),
+02343760,Access UK Ltd,peer,FY2024,2024-06-30,revenue_gbp,708813,GBP_k,02343760_FY2025.pdf,6,CH (manifest.csv row),strategic report confirms FY2024 708813 (FY2025 751022)
+02343760,Access UK Ltd,peer,FY2024,2024-06-30,staff_costs_gbp,265270,GBP_k,02343760_FY2024.pdf,48,CH (manifest.csv row),232201+23752+9317
+02343760,Access UK Ltd,peer,FY2024,2024-06-30,avg_headcount,4429,count,02343760_FY2024.pdf,48,CH (manifest.csv row),
+02343760,Access UK Ltd,peer,FY2025,2025-06-30,revenue_gbp,751022,GBP_k,02343760_FY2025.pdf,6,CH (manifest.csv row),strategic report business review
+02343760,Access UK Ltd,peer,FY2025,2025-06-30,staff_costs_gbp,300058,GBP_k,02343760_FY2025.pdf,53,CH (manifest.csv row),wages 258179 (derived) + socsec 31308 + pension 10571
+02343760,Access UK Ltd,peer,FY2025,2025-06-30,avg_headcount,4591,count,02343760_FY2025.pdf,53,CH (manifest.csv row),
+02050075,IRIS Business Software Limited (group),peer,FY2024,2024-04-30,revenue_gbp,373544,GBP_k,02050075_FY2024.pdf,39,CH (manifest.csv row),IRIS Debtco consolidated income statement; FY2023 comparative 319080
+02050075,IRIS Business Software Limited (group),peer,FY2024,2024-04-30,staff_costs_gbp,161282,GBP_k,02050075_FY2024.pdf,55,CH (manifest.csv row),staff note p55; components sum 160505 - OCR uncertainty ~1m; FY2023 131648
+02050075,IRIS Business Software Limited (group),peer,FY2024,2024-04-30,avg_headcount,2986,count,02050075_FY2024.pdf,55,CH (manifest.csv row),totals row OCR-swapped - component sums confirm 2986 (2024) vs 2638 (2023 restated incl contractors)
+02050075,IRIS Business Software Limited (group),peer,FY2023,2023-04-30,revenue_gbp,319080,GBP_k,02050075_FY2024.pdf,39,CH (manifest.csv row),comparative in FY2024 filing
+02050075,IRIS Business Software Limited (group),peer,FY2023,2023-04-30,staff_costs_gbp,131648,GBP_k,02050075_FY2024.pdf,55,CH (manifest.csv row),comparative in FY2024 filing
+02050075,IRIS Business Software Limited (group),peer,FY2023,2023-04-30,avg_headcount,2638,count,02050075_FY2024.pdf,55,CH (manifest.csv row),restated basis incl contractors

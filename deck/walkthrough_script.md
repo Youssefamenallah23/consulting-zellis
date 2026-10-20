@@ -1,0 +1,18 @@
+# 5-Minute Walkthrough Script
+
+Record this narrating `deck/IC_Deck_Zellis_Rightsizing.pptx` — roughly 30 seconds per slide. The slide titles already tell the story; this adds the "so what" in spoken form. Practise 2–3 times, then record (PowerPoint: Slide Show → Record, or any screen recorder).
+
+| # | Slide title | What to say (≈30s each) |
+|---|---|---|
+| 1 | Zellis generates 27% less revenue per employee… | "I built this case the way I'd build it at Humatica: a PE sponsor bought Zellis in 2024. I asked one question — is it over-staffed or under-productive, and what's the value at stake? Answer first: output per head is 27% below PE peers, worth £32–37m of annual EBITDA. Everything I show next is sourced from public filings." |
+| 2 | A new sponsor needs an organisational view… | "Scope: Zellis group — payroll and HR software, £261m revenue, 2,655 FTE. Three PE-owned peers benchmarked from Companies House: OneAdvanced, Access, IRIS — each at its latest comparable filed year. I OCR'd ~2,000 pages of filings and every figure is in a data log with a page reference." |
+| 3 | Output per head is 27% below the median… | "Finding one: £98k revenue per employee vs a £135k peer median. And scale doesn't explain it — OneAdvanced and IRIS are both bigger than Zellis and still run at 125–135k. So the gap is real, not a small-company artefact." |
+| 4 | Zellis pays less per head than peers… | "Finding two is the important one: Zellis pays BELOW the peer median per head — £51k vs £54k. So the 12-point staff-cost gap isn't salary inflation. The organisation converts each pound of pay into less revenue. That reframes the problem from 'are we overpaying' to 'why isn't capacity converting to output'." |
+| 5 | The trajectory is improving… | "Finding three: this isn't decline. Staff ratio improved from 58% to 52% in four years, revenue grew 14% a year, headcount grew only 19% while revenue grew 64%. The organisation is already absorbing growth — a headcount cap would risk the very asset the sponsor bought." |
+| 6 | Closing the gap is worth £32–37m… | "I sized it two ways that must agree: the ratio route gives £32m, the headcount route £37m — within 16%, and I explain why they differ. Scenarios are anchored to the peer distribution, not arbitrary percentages. Year one, after phasing and implementation cost: roughly £13m net." |
+| 7 | We recommend a productivity-focused operating review… | "Three actions: a business-unit diagnostic across Zellis, Moorepay and Benifex; a commercial engine review — the low cost per head suggests capacity to sell more without hiring; and codifying what already worked into a sub-48% FY2026 target. Explicitly not a headcount cut." |
+| 8 | Three data caveats could move the answer… | "I flag my own weaknesses: Access is a roll-up so its growth flatters it; there were restatements I had to handle; and filings show cost, not output quality. None of them reverses the direction — excluding the roll-up peer makes the gap wider, not narrower." |
+| 9 | Five management dialogues… | "This is where a Humatica engagement goes next: public data proves the hypothesis but can't separate mix, spans and process. Five named dialogues — CFO, the two business-unit MDs, CHRO and CTO — convert it into an executable plan." |
+| 10 | Next steps: a 90-day path… | "And a 90-day path: diagnostic, commercial review, implementation plan with an IC checkpoint against the £32m base case. Everything — data log, model, deck, build scripts — is on GitHub and reproducible end to end." |
+
+**Delivery tips:** answer-first on slide 1, pause after each finding, land the recommendation firmly on 7, and own the caveats on 8 — interviewers hire people who volunteer their own weaknesses.
