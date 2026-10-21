@@ -15,7 +15,7 @@ Computed in `data/analysis.py` → `metrics.csv` from the DuckDB database. Every
 
 ## The three findings (each a full sentence with a number)
 
-1. **Zellis generates 27.3% less revenue per employee than the PE-peer median** (£98.3k vs £135.3k across four PE peers), and the gap holds against every scale-matched peer (OneAdvanced £309m: 27%; IRIS £374m: 26%) — this is not a small-company artefact (kills Branch B).
+1. **Zellis generates 27.3% less revenue per employee than the PE-peer median** (£98.3k vs £135.3k across three PE peers), and the gap holds against every scale-matched peer (OneAdvanced £309m: 27%; IRIS £374m: 26%) — this is not a small-company artefact (kills Branch B).
 2. **The gap is an output problem, not a pay problem**: Zellis's staff cost per FTE (£51.4k) is *below* the peer median (£54.0k), yet its staff-cost ratio (52.3% of revenue) is 12.3 points above the peer median (40.0%) — the organisation converts pay into less revenue (kills the "overpaying" branch of H1's alternative).
 3. **Zellis is on an improving trajectory, not in crisis**: staff ratio fell from 58.1% (FY2021) to 52.3% (FY2025) while revenue compounded at 14.2%/yr — comparable to IRIS's 17.1% (FY2023→24) and far ahead of OneAdvanced (−0.8%/yr) — so the value at stake is about *how efficiently the next pound of investment converts*, not about cutting heads (confirms the Branch C "deliberate over-investment" branch as part of the answer).
 
@@ -23,7 +23,7 @@ Computed in `data/analysis.py` → `metrics.csv` from the DuckDB database. Every
 
 | Hypothesis | Verdict | Evidence |
 |---|---|---|
-| H1 productivity gap >25% vs median | **Supported** | 34.2% below median; 27% vs scale-matched peer |
+| H1 productivity gap >25% vs median | **Supported** | 27.3% below median; 27% vs scale-matched peer |
 | H2 gap survives scale adjustment | **Supported** | Persists vs OneAdvanced at comparable scale |
 | H3 growth trails peers by ≥5pts (structural) | **Refuted** | Zellis CAGR 14.2% > OneAdvanced −0.8% — hiring is ahead of revenue, not failing |
 

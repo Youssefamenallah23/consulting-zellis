@@ -1,50 +1,80 @@
-"""Verify the Excel model: formulas present + independent recomputation."""
+# -*- coding: utf-8 -*-
+"""Evaluate the workbook with an independent engine and assert the numbers."""
+import sys
 from pathlib import Path
 
-from openpyxl import load_workbook
+import formulas
 
-import duckdb
+sys.stdout.reconfigure(encoding="utf-8")
 
-wb = load_workbook(Path(__file__).parent.parent / "model" / "ValueAtStake.xlsx")
-print("sheets:", wb.sheetnames)
+WB = Path(__file__).parent.parent / "model" / "ValueAtStake.xlsx"
+book = formulas.ExcelModel().loads(str(WB)).finish()
+sol = book.calculate()
 
-m = wb["Model"]
-for cell in ("B4", "B5", "B6", "B8", "B12", "B13", "B15", "B18", "B25"):
-    print(f"Model!{cell}: {m[cell].value}")
-s = wb["Scenarios"]
-for cell in ("B4", "B5", "B6", "F4", "F5", "F6"):
-    print(f"Scenarios!{cell}: {s[cell].value}")
-sn = wb["Sensitivity"]
-print("Sensitivity!B5:", sn["B5"].value)
-print("Sensitivity!F9:", sn["F9"].value)
+P = "'[ValueAtStake.xlsx]"
 
-# ---- independent recomputation from the database ----
-con = duckdb.connect(str(Path(__file__).parent / "org_effectiveness.duckdb"), read_only=True)
-rows = con.execute(
-    """
-    SELECT company_name, role, fy,
-           MAX(CASE WHEN metric='revenue_gbp' THEN value END) AS rev,
-           MAX(CASE WHEN metric='staff_costs_gbp' THEN value END) AS staff,
-           MAX(CASE WHEN metric='avg_headcount' THEN value END) AS hc
-    FROM financials GROUP BY 1,2,3
-    """
-).fetchall()
-latest = {}
-for name, role, fy, rev, staff, hc in rows:
-    if name not in latest or fy > latest[name][2]:
-        latest[name] = [name, role, fy, rev, staff, hc]
-allrows = list(latest.values())
-peers = [r for r in allrows if r[1] == "peer"]
-tgt = [r for r in allrows if r[1] == "target"][0]
-import statistics
 
-rev_fte = {r[0]: r[3] / r[5] for r in allrows}
-staff_pct = {r[0]: r[4] / r[3] for r in allrows}
-med_rf = statistics.median(r[3] / r[5] for r in peers)
-med_sp = statistics.median(r[4] / r[3] for r in peers)
-A = (tgt[4] / tgt[3] - med_sp) * tgt[3]
-implied_hc = tgt[3] / med_rf
-B = (tgt[5] - implied_hc) * (tgt[4] / tgt[5])
-print(f"\nexpected: peer median rev/FTE {med_rf:.1f} | median staff% {med_sp * 100:.1f}%")
-print(f"expected Method A {A:,.0f} k | Method B {B:,.0f} k | cross-check {abs(A - B) / A * 100:.1f}%")
-print(f"target rev/FTE {rev_fte[tgt[0]]:.1f} vs median -> gap {(1 - rev_fte[tgt[0]] / med_rf) * 100:.1f}%")
+def v(sheet_cell):
+    sheet, cell = sheet_cell.split("!")
+    key = P + sheet.upper() + "'!" + cell
+    return sol[key].value[0, 0]
+
+
+checks = {
+    "Inputs rows": ("INPUTS!A5", None),
+    "Target revenue": ("BENCHMARKS!D5", 261068),
+    "Target FTE": ("BENCHMARKS!F5", 2655),
+    "Target rev/FTE": ("BENCHMARKS!G5", 98.33),
+    "Target staff %": ("BENCHMARKS!H5", 0.5228),
+    "Peer median rev/FTE": ("BENCHMARKS!B12", 135.33),
+    "Peer P25": ("BENCHMARKS!B13", 130.21),
+    "Peer P75": ("BENCHMARKS!B14", 149.45),
+    "Peer median staff %": ("BENCHMARKS!B15", 0.3995),
+    "Gap %": ("BENCHMARKS!B21", -0.2733),
+    "Method A": ("SIZING!B9", 32196),
+    "Implied FTE": ("SIZING!B13", 1929.2),
+    "Method B": ("SIZING!B16", 37310),
+    "Reconciliation": ("SIZING!B20", 0.1588),
+    "Verdict": ("SIZING!B21", "RECONCILED"),
+    "Low": ("SIZING!B24", 32196),
+    "High": ("SIZING!B25", 37310),
+    "Mid": ("SIZING!B26", 34753),
+    "Year-1 net": ("SIZING!B35", 12164),
+    "Scenario cons": ("SCENARIOS!E5", 33425),
+    "Scenario base": ("SCENARIOS!E6", 37310),
+    "Scenario stretch": ("SCENARIOS!E7", 46684),
+    "Sens top-left": ("SENSITIVITY!B5", 4343.68),
+    "Sens bottom-right": ("SENSITIVITY!F8", 3475),
+    "Checks overall": ("CHECKS!B17", "ALL CHECKS PASS"),
+}
+
+worst = 0.0
+fails = []
+for label, (cell, expected) in checks.items():
+    try:
+        got = v(cell)
+    except Exception as exc:  # noqa: BLE001
+        fails.append((label, cell, "ERROR " + str(exc)[:80]))
+        continue
+    if expected is None:
+        print("%-22s %-18s %s" % (label, cell, got))
+        continue
+    if isinstance(expected, str):
+        ok = str(got) == expected
+        print("%-22s %-18s %-14s expected %s %s" % (label, cell, got, expected, "OK" if ok else "MISMATCH"))
+        if not ok:
+            fails.append((label, cell, got))
+    else:
+        diff = abs(float(got) - expected) / max(abs(expected), 1e-9)
+        worst = max(worst, diff)
+        ok = diff < 0.01
+        print("%-22s %-18s %12.4f  expected %12.4f  %s" % (label, cell, float(got), expected, "OK" if ok else "MISMATCH"))
+        if not ok:
+            fails.append((label, cell, got))
+
+print()
+print("worst relative deviation: %.4f%%" % (worst * 100))
+print("FAILURES:", len(fails))
+for f in fails:
+    print("  ", f)
+sys.exit(1 if fails else 0)

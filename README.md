@@ -114,6 +114,7 @@ Because Companies House filings are **image scans with no text layer** (we verif
 ## 🔁 Rebuild everything in 8 commands
 
 ```bash
+pip install openpyxl formulas duckdb pymupdf   # only needed once
 python data/pull_filings.py        # download filings from Companies House (public, polite)
 python data/ocr_financials.py      # OCR the scanned filings (self-throttled, cached)
 python data/load_duckdb.py         # build the database from data/financials.csv
@@ -124,12 +125,12 @@ python deck/build_deck.py          # rebuild the deck from the database
 python data/ai_retrieval.py "average number of employees"   # search filings with citations
 ```
 
-`data/financials.csv` is the verified dataset: **49 rows, each traceable to a filing and a page.**
+`data/financials.csv` is the verified dataset: **48 rows across 16 company-years, each traceable to a filing and a page.**
 
 ## 🧪 What makes this trustworthy
 
 - **Every number has a filing and a page number** (`data/financials.csv`, `data/data-log.md`)
-- **The model was audited**: `verify_model.py` recomputes every figure independently from the database
+- **The model is audited**: `verify_model.py` recalculates the workbook with an independent engine and asserts 24 cells against hand-computed values; the workbook's own 10 integrity checks must all read PASS
 - **The deck was generated from the database** — no copy-paste drift between analysis, model and slides
 - **Own weaknesses are documented**: entity-vs-group basis, restatements, a roll-up peer, public-data limits
 

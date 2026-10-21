@@ -253,7 +253,7 @@ s = add_slide(
 add_bullets(
     s,
     [
-        ("1. Productivity diagnostic at business-unit level (Zellis / Moorepay / Benifex): reconcile the group-level 34% gap to unit-level drivers - spans of control, service mix, delivery model.", 0),
+        ("1. Productivity diagnostic at business-unit level (Zellis / Moorepay / Benifex): reconcile the group-level 27% gap to unit-level drivers - spans of control, service mix, delivery model.", 0),
         ("2. Commercial engine review: payroll & BPaaS pricing and packaging - the low cost per FTE suggests capacity to serve more revenue per head without new hires.", 0),
         ("3. Codify the improvement: the staff ratio improved 5.8 points in four years - extract what worked (automation, centralisation) and set it as the FY2026 operating target (52% -> sub-48%).", 0),
         ("Explicitly NOT recommended: a top-down headcount reduction. The growth engine (14%/yr) is the asset the sponsors bought; the gap closes through output, not exits.", 0),
